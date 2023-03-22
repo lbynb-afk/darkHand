@@ -1,0 +1,5 @@
+Git教程
+
+git init 建库
+git list 看一下个人信息
+
