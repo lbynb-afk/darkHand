@@ -10,3 +10,7 @@ git log  看下提交日志
 git add -A 加入文件下所有文件
 : o 退出
 git checkout xxx 版本切换
+
+git checkout -b<branch name> 新建分支
+git branch 查看分支信息
+git merge xxx 合并分支
