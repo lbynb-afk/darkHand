@@ -3,3 +3,10 @@ Git教程
 git init 建库
 git list 看一下个人信息
 
+git status 看一下仓库信息
+git add 加入文件
+git commit -m "xxx" 提交库中
+git log  看下提交日志
+git add -A 加入文件下所有文件
+: o 退出
+git checkout xxx 版本切换
