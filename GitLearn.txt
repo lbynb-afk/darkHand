@@ -7,10 +7,22 @@ git status 看一下仓库信息
 git add 加入文件
 git commit -m "xxx" 提交库中
 git log  看下提交日志
+git add .
 git add -A 加入文件下所有文件
+：q
 : o 退出
 git checkout xxx 版本切换
 
 git checkout -b<branch name> 新建分支
 git branch 查看分支信息
 git merge xxx 合并分支
+
+
+github 
+ssh-keygen       SSH-key生成
+cd ~/.ssh
+cat id_rsa.pub   看公共密码
+
+git clone
+git push
+git pull
