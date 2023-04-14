@@ -27,8 +27,3 @@ git clone      克隆仓库到本地，让自己能够查看或者修改项目
 git remote -v  看一下地址
 git push       推送本地仓库的commit记录到远程仓库github
 git pull       拉取远程仓库合并到当前分支   
-
-
-
-
-bb
