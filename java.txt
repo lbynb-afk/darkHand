@@ -1,0 +1,11 @@
+1，BufferedReader是干啥的?
+
+BufferedReader是Java中的一个输入流，它可以读取字符流并将其缓存在内存中，以提高读取效率。
+
+它通常与InputStreamReader一起使用，可以从文件、网络连接或其他输入源读取数据。
+
+BufferedReader提供了许多读取方法，如read()、readLine()等，可以方便地读取字符流中的数据。
+
+
+2，
+
